@@ -11,7 +11,7 @@
  Target Server Version : 50721
  File Encoding         : 65001
 
- Date: 05/08/2018 15:02:45
+ Date: 05/08/2018 15:17:19
 */
 
 SET NAMES utf8mb4;
@@ -41,7 +41,7 @@ CREATE TABLE `m_admin_user` (
 -- Records of m_admin_user
 -- ----------------------------
 BEGIN;
-INSERT INTO `m_admin_user` VALUES (1, '管理员', 'admin', 'cea3e8e1659582206e0be32539729e9f', NULL, NULL, NULL, NULL, 1533452156, 1533288201, 'uploads/20180803/e6a2b6082620611ddd2b0e4b731829fa.JPG', 1);
+INSERT INTO `m_admin_user` VALUES (1, '管理员', 'admin', 'cea3e8e1659582206e0be32539729e9f', NULL, NULL, NULL, NULL, 1533453390, 1533453383, NULL, 1);
 INSERT INTO `m_admin_user` VALUES (2, '测试', 'dev', 'c9a973c677899e92518c823c31527716', NULL, 1, 5, 6, 1533287732, 1533287755, NULL, 1);
 COMMIT;
 
