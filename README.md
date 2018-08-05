@@ -11,6 +11,6 @@ English | [简体中文](./README.zh-CN.md)
 
 ## License
 
-MIT
+[MIT](./LICENSE)
 
 Copyright (c) 2018-8 master-nan

@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 本地
+ Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 80011
- Source Host           : localhost:3308
+ Source Server Version : 50721
+ Source Host           : localhost:3306
  Source Schema         : master
 
  Target Server Type    : MySQL
- Target Server Version : 80011
+ Target Server Version : 50721
  File Encoding         : 65001
 
- Date: 01/08/2018 23:06:32
+ Date: 05/08/2018 15:02:45
 */
 
 SET NAMES utf8mb4;
@@ -31,6 +31,8 @@ CREATE TABLE `m_admin_user` (
   `d_id` tinyint(3) DEFAULT '0' COMMENT '部门id',
   `p_id` tinyint(3) DEFAULT '0' COMMENT '岗位',
   `last_login_at` int(10) DEFAULT '0' COMMENT '上次登录时间',
+  `last_logout_at` int(10) DEFAULT NULL COMMENT '上次退出时间',
+  `avatar` varchar(255) DEFAULT NULL COMMENT '头像路径',
   `status` tinyint(1) DEFAULT '1' COMMENT '当前状态0禁用',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
@@ -39,38 +41,9 @@ CREATE TABLE `m_admin_user` (
 -- Records of m_admin_user
 -- ----------------------------
 BEGIN;
-INSERT INTO `m_admin_user` VALUES (1, '管理员', 'admin', 'cea3e8e1659582206e0be32539729e9f', NULL, NULL, NULL, NULL, NULL, 1);
-INSERT INTO `m_admin_user` VALUES (2, '测试', 'dev', 'c9a973c677899e92518c823c31527716', NULL, 1, 5, 6, NULL, 1);
+INSERT INTO `m_admin_user` VALUES (1, '管理员', 'admin', 'cea3e8e1659582206e0be32539729e9f', NULL, NULL, NULL, NULL, 1533452156, 1533288201, 'uploads/20180803/e6a2b6082620611ddd2b0e4b731829fa.JPG', 1);
+INSERT INTO `m_admin_user` VALUES (2, '测试', 'dev', 'c9a973c677899e92518c823c31527716', NULL, 1, 5, 6, 1533287732, 1533287755, NULL, 1);
 COMMIT;
-
--- ----------------------------
--- Table structure for m_class
--- ----------------------------
-DROP TABLE IF EXISTS `m_class`;
-CREATE TABLE `m_class` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `class` varchar(32) DEFAULT NULL,
-  `create_at` int(10) DEFAULT NULL,
-  `update_at` int(10) DEFAULT NULL,
-  `is_del` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for m_commodity
--- ----------------------------
-DROP TABLE IF EXISTS `m_commodity`;
-CREATE TABLE `m_commodity` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `class_id` int(10) DEFAULT NULL,
-  `norm_id` int(10) DEFAULT NULL,
-  `name` varchar(64) DEFAULT NULL,
-  `num` int(10) DEFAULT NULL,
-  `price` int(10) DEFAULT NULL,
-  `create_at` int(10) DEFAULT NULL,
-  `update_at` int(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for m_department
@@ -79,7 +52,6 @@ DROP TABLE IF EXISTS `m_department`;
 CREATE TABLE `m_department` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) DEFAULT '',
-  `pid` int(11) DEFAULT '0',
   `status` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='部门表';
@@ -88,26 +60,27 @@ CREATE TABLE `m_department` (
 -- Records of m_department
 -- ----------------------------
 BEGIN;
-INSERT INTO `m_department` VALUES (1, '总经办', 0, 1);
-INSERT INTO `m_department` VALUES (2, '财务部', 0, 1);
-INSERT INTO `m_department` VALUES (3, '研发部', 0, 1);
-INSERT INTO `m_department` VALUES (4, '设计部', 0, 1);
-INSERT INTO `m_department` VALUES (5, '市场部', 0, 1);
-INSERT INTO `m_department` VALUES (6, '测试部', 0, 1);
-INSERT INTO `m_department` VALUES (7, '项目部', 0, 1);
+INSERT INTO `m_department` VALUES (1, '总经办', 1);
+INSERT INTO `m_department` VALUES (2, '财务部', 1);
+INSERT INTO `m_department` VALUES (3, '研发部', 1);
+INSERT INTO `m_department` VALUES (4, '设计部', 1);
+INSERT INTO `m_department` VALUES (5, '市场部', 1);
+INSERT INTO `m_department` VALUES (6, '测试部', 1);
+INSERT INTO `m_department` VALUES (7, '项目部', 1);
 COMMIT;
 
 -- ----------------------------
--- Table structure for m_file
+-- Table structure for m_files
 -- ----------------------------
-DROP TABLE IF EXISTS `m_file`;
-CREATE TABLE `m_file` (
+DROP TABLE IF EXISTS `m_files`;
+CREATE TABLE `m_files` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `hash` varchar(255) DEFAULT NULL,
   `path` varchar(255) DEFAULT NULL,
   `u_id` int(10) DEFAULT '0',
   `ext` varchar(16) DEFAULT NULL,
+  `type` varchar(16) DEFAULT NULL,
   `create_at` int(10) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -160,49 +133,6 @@ INSERT INTO `m_menu` VALUES (20, 17, 'editUser', '用户编辑', NULL, 'editUser
 COMMIT;
 
 -- ----------------------------
--- Table structure for m_norm
--- ----------------------------
-DROP TABLE IF EXISTS `m_norm`;
-CREATE TABLE `m_norm` (
-  `id` int(10) NOT NULL,
-  `norm` varchar(16) DEFAULT NULL,
-  `create_at` int(10) DEFAULT NULL,
-  `update_at` int(10) DEFAULT NULL,
-  `is_del` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for m_order
--- ----------------------------
-DROP TABLE IF EXISTS `m_order`;
-CREATE TABLE `m_order` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `order` varchar(64) DEFAULT NULL,
-  `create_at` int(10) DEFAULT NULL,
-  `update_at` int(10) DEFAULT NULL,
-  `status` tinyint(1) DEFAULT '1',
-  `is_del` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for m_order_details
--- ----------------------------
-DROP TABLE IF EXISTS `m_order_details`;
-CREATE TABLE `m_order_details` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `order` varchar(64) DEFAULT NULL,
-  `comm_id` int(10) DEFAULT NULL,
-  `name` varchar(32) DEFAULT NULL,
-  `offer` int(10) DEFAULT '0',
-  `num` int(10) DEFAULT '0',
-  `create_at` int(10) DEFAULT NULL,
-  `update_at` int(10) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
 -- Table structure for m_position
 -- ----------------------------
 DROP TABLE IF EXISTS `m_position`;
@@ -219,17 +149,17 @@ CREATE TABLE `m_position` (
 -- Records of m_position
 -- ----------------------------
 BEGIN;
-INSERT INTO `m_position` VALUES (1, '后端开发工程师', '1122223111', 1484706862, 0);
+INSERT INTO `m_position` VALUES (1, '后端开发工程师', '1122223111', 1484706862, 1);
 INSERT INTO `m_position` VALUES (2, '前端开发工程师', '擦擦', 1484706863, 1);
 INSERT INTO `m_position` VALUES (3, '设计师', NULL, 1484706863, 1);
-INSERT INTO `m_position` VALUES (4, '文案策划', NULL, 1484706863, 0);
+INSERT INTO `m_position` VALUES (4, '文案策划', NULL, 1484706863, 1);
 INSERT INTO `m_position` VALUES (5, '产品助理', NULL, 1484706863, 1);
-INSERT INTO `m_position` VALUES (6, '总经理', NULL, 1484706863, 0);
+INSERT INTO `m_position` VALUES (6, '总经理', NULL, 1484706863, 1);
 INSERT INTO `m_position` VALUES (7, '项目经理', NULL, 1484706863, 1);
-INSERT INTO `m_position` VALUES (8, '项目助理', NULL, 1484706863, 0);
-INSERT INTO `m_position` VALUES (9, '测试工程师', NULL, 1484706863, 0);
-INSERT INTO `m_position` VALUES (10, '人事经理', NULL, 1484706863, 0);
-INSERT INTO `m_position` VALUES (11, 'CEO', NULL, 1484706863, 0);
+INSERT INTO `m_position` VALUES (8, '项目助理', NULL, 1484706863, 1);
+INSERT INTO `m_position` VALUES (9, '测试工程师', NULL, 1484706863, 1);
+INSERT INTO `m_position` VALUES (10, '人事经理', NULL, 1484706863, 1);
+INSERT INTO `m_position` VALUES (11, 'CEO', NULL, 1484706863, 1);
 COMMIT;
 
 -- ----------------------------
