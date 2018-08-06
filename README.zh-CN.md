@@ -12,8 +12,11 @@
 - [项目地址](https://github.com/master-nan/vue-thinkphp-admin)
 - [在线地址]()
 
-全部权限账号：  admin   111111
-部分权限账号：  dev     111111   
+全部权限账号：
+`admin`   `111111`
+
+部分权限账号：
+`dev`     `111111`  
 
 ## 准备
 
@@ -84,10 +87,10 @@
 
 编译过程中`node-sass`报错，请使用淘宝镜像然后`npm install node-sass --save`；安装`chromedriver`报错，请使用`npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver`。
 
-服务端启动需要`runtime`目录权限，如报错请执行`chmod -R 777 runtime/`;上传功能需要`public`目录写入权限，如报错请执行`chmod -R 777 public/`;请进入`server`目录再执行前面两句话。
+服务端启动需要`runtime`目录权限，如报错请执行`chmod -R 775 runtime/`;上传功能需要`public`目录写入权限，如报错请执行`chmod -R 775 public/`;请进入`server`目录再执行前面两句话。
 
 
-##  最后
+## 最后
 
 在开发过程中也碰到部分坑，动态路由判断方面，登陆以后拿到路由先存本地缓存然后再加到状态管理，这样可以保证直接刷新页面时不会出现缺少路由的问题；同样也是动态路由，如果当前页面切换用户，由于vue对象没有销毁，先前加载的路由还存在，将会出现重复加载或者权限泄露的问题，目前的做法是退出时进行`location.reload()`操作。关于引入第三方icon，本项目加入了多色icon基于iconfont，在打包过程中发现引入本地js打包会出现eslint错误，最终还是在html里引入远程js地址解决的。
 
@@ -97,8 +100,9 @@
 
 ## 最后的最后
 
-如果你喜欢这个项目，或者这个项目对你当前工作有所帮助，请给`star`谢谢！
-后面将基于`vue`和`thinkphp`开发一套公司宣传网站的cms系统，请多关照。
+如果你喜欢这个项目，或者这个项目对你当前工作有所帮助，请给`star`谢谢!
+
+后面将基于`vue`和`thinkphp`开发一套公司宣传网站的`cms`系统，请多关照。
 
 
 ## 许可证
