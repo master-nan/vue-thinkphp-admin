@@ -51,6 +51,7 @@ export const currentRouter = [
 ]
 
 export const router = new Router({
+  mode: 'history',
   routes: publicRouter,
   scrollBehavior: () => ({ y: 0 })
 })

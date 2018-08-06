@@ -12,7 +12,7 @@ English | [简体中文](./README.zh-CN.md)
 - [Online access]()
 
 ## Preparation
-Mainly used in the project are [vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/)、[element-ui](https://github.com/ElemeFE/element) and [thinkphp](https://github.com/top-think/framework/tree/master)，which are necessary for you to acquire if a secondary development is needed.
+Mainly used in the project are [vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/)、[element-ui](https://github.com/ElemeFE/element) and [thinkphp5.0](https://github.com/top-think/framework/tree/master)，which are necessary for you to acquire if a secondary development is needed.
 
 ## Directory
 
@@ -35,9 +35,8 @@ Main Directory Structure and Document Introduction
       |  |  |  |-http.js         引入axios，提供get/post/put方法，如需更多自行增加
       |  |  |  └─index.js        全局一些公共方法
       |  |  |-ivews              所有页面目录
-      |  |  └─...    
-      |  |-static  
-      |  └─test        
+      |  |  └─...     
+      |  └─static      
       |-server                   服务的
       |  |-application           应用目录
       |  |  |-admin              模块目录
