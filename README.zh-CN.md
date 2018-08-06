@@ -17,7 +17,7 @@
 
 ## 准备
 
-本项目使用了[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/)、[element-ui](https://github.com/ElemeFE/element) 以及 [thinkphp](https://github.com/top-think/framework/tree/master)，请自行掌握以上相关知识。
+本项目使用了[vue](https://cn.vuejs.org/index.html)、[vuex](https://vuex.vuejs.org/zh-cn/)、[vue-router](https://router.vuejs.org/zh-cn/)、[element-ui](https://github.com/ElemeFE/element) 以及 [thinkphp5.0](https://github.com/top-think/framework/tree/master)，请自行掌握以上相关知识。
 
 ## 目录
 
@@ -62,7 +62,8 @@
 ## 说明
 
 本项目借鉴其他使用vue编写的前端项目的侧边栏，有部分改动，目前仅支持二级目录，如果需要更多层级请自行修改。目前大多数使用vue的前端项目仅仅提供前端路由控制，并没有与后端相结合；其他有些项目虽然与后端结合了，但是却没有动态生成路由，而是在前端将所有路由全部加载，后端仅告知前端 菜单是否显示隐藏，这样我觉得并不是真正的动态路由。
-本项目在使用时前端只需将路由的component内容全部导入，然后用户在项目界面配置目录时选择前端导入的对应内容进行配置，配置完目录可以进行权限分配，并可以给不同用户指定不同权限；当用户登录时读取对应权限生产菜单交给前端，可以在router.js文件的钩子函数中去判断 然后增加显示菜单；项目相关的数据库文件在server/sql目录中，已经设计了表并添加了相关数据；本项目只是针对菜单权限，并没有添加过多的组件，如果你在开发中需要其它组件请自行添加。
+
+本项目在使用时前端只需将路由的component内容全部导入，然后用户在项目界面配置目录时选择前端导入的对应内容进行配置，配置完目录可以进行权限分配，并可以给不同用户指定不同权限;当用户登录时读取对应权限生产菜单交给前端，可以在router.js文件的钩子函数中去判断 然后增加显示菜单；项目相关的数据库文件在server/sql目录中，已经设计了表并添加了相关数据；本项目只是针对菜单权限，并没有添加过多的组件，如果你在开发中需要其它组件请自行添加。
 
 
 ## 功能
@@ -81,20 +82,23 @@
 
 ## 注意
 
-编译过程中node-sass报错，请使用淘宝镜像然后npm install node-sass --save；安装chromedriver报错，请使用npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver。
-服务端启动需要runtime目录权限，如报错请执行chmod -R 777 runtime/;上传功能需要public目录写入权限，如报错请执行chmod -R 777 public/;请进入server目录再执行前面两句话。
+编译过程中`node-sass`报错，请使用淘宝镜像然后`npm install node-sass --save`；安装`chromedriver`报错，请使用`npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver`。
+
+服务端启动需要`runtime`目录权限，如报错请执行`chmod -R 777 runtime/`;上传功能需要`public`目录写入权限，如报错请执行`chmod -R 777 public/`;请进入`server`目录再执行前面两句话。
 
 
 ##  最后
 
-在开发过程中也碰到部分坑，动态路由判断方面，登陆以后拿到路由先存本地缓存然后再加到状态管理，这样可以保证直接刷新页面时不会出现缺少路由的问题；同样也是动态路由，如果当前页面切换用户，由于vue对象没有销毁，先前加载的路由还存在，将会出现重复加载或者权限泄露的问题，目前的做法是退出时进行location.reload()操作。关于引入第三方icon，本项目加入了多色icon基于iconfont，在打包过程中发现引入本地js打包会出现eslint错误，最终还是在html里引入远程js地址解决的。
-目前前端数据存储在sessionStorage中，需要其它方式请自行修改。
+在开发过程中也碰到部分坑，动态路由判断方面，登陆以后拿到路由先存本地缓存然后再加到状态管理，这样可以保证直接刷新页面时不会出现缺少路由的问题；同样也是动态路由，如果当前页面切换用户，由于vue对象没有销毁，先前加载的路由还存在，将会出现重复加载或者权限泄露的问题，目前的做法是退出时进行`location.reload()`操作。关于引入第三方icon，本项目加入了多色icon基于iconfont，在打包过程中发现引入本地js打包会出现eslint错误，最终还是在html里引入远程js地址解决的。
+
+目前前端数据存储在`sessionStorage`中，需要其它方式请自行修改。
+
 以上问题如有更好的方案可以提出，如果本项目发现bug请提出，我会第一时间进行修复。这个项目我自己也会在其他项目中使用，如有其他通用功能还会继续更新。
 
 ## 最后的最后
 
-如果你喜欢这个项目，或者这个项目对你当前工作有所帮助，请给star谢谢！
-后面将基于vue和thinkphp开发一套公司宣传网站的cms系统，请多关照。
+如果你喜欢这个项目，或者这个项目对你当前工作有所帮助，请给`star`谢谢！
+后面将基于`vue`和`thinkphp`开发一套公司宣传网站的cms系统，请多关照。
 
 
 ## 许可证

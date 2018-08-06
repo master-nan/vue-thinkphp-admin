@@ -6,7 +6,7 @@
 English | [简体中文](./README.zh-CN.md)
 
 ## Introduction
-[vue-thinkphp-admin](https://github.com/master-nan/vue-thinkphp-admin) is a more targeted background authority management project based on [vue](https://github.com/vuejs/vue)+[thinkphp](https://github.com/top-think/framework/tree/master)；The project ensures a close connection between front-end permissions and the back-end, when accessible routing for the front-end is provided by the back-end with an enhanced authority authentication for a more secure system.
+[vue-thinkphp-admin](https://github.com/master-nan/vue-thinkphp-admin) is a more targeted background authority management project based on [vue](https://github.com/vuejs/vue)+[thinkphp5.0](https://github.com/top-think/framework/tree/master)；The project ensures a close connection between front-end permissions and the back-end, when accessible routing for the front-end is provided by the back-end with an enhanced authority authentication for a more secure system.
 
 - [Project Address](https://github.com/master-nan/vue-thinkphp-admin)
 - [Online access]()
