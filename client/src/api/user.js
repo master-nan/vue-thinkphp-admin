@@ -40,8 +40,7 @@ let update = async (data) => {
       d[k] = v
     }
   })
-
-  let result = await http.put(url, data)
+  let result = await http.put(url, d)
   return result
 }
 

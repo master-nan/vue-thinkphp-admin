@@ -80,7 +80,11 @@ router.beforeEach((to, from, next) => {
           next({path: '/login'})
         }
       } else {
-        next()
+        if (JSON.stringify(to.meta) === '{}' && to.name) {
+          next({path: '/404'})
+        } else {
+          next()
+        }
       }
     }
   } else {
