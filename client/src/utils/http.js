@@ -2,7 +2,7 @@ import axios from 'axios'
 import qs from 'qs'
 import _ from 'lodash'
 
-let baseURL = 'http://localhost:9999/'
+let baseURL = 'http://localhost:9090/'
 
 let request = async (requestMethod = 'get', requestConf) => {
   requestConf.headers = {}

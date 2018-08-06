@@ -86,7 +86,7 @@ export default{
       })
     },
     toLink () {
-      window.open('https://github.com/master-nan/OrderSystem-nan')
+      window.open('https://github.com/master-nan/vue-thinkphp-admin')
     }
   }
 }

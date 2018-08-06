@@ -12,6 +12,9 @@ class AdminUser extends Comm
 
     public function index()
     {
+        if (!$this->checkRule()) {
+            return msg(102, null, '您没有权限操作');
+        }
         $arr = [];
         if (isset($this->param['data'])) {
             $data = json_decode($this->param['data'], true);
@@ -42,6 +45,9 @@ class AdminUser extends Comm
 
     public function save()
     {
+        if (!$this->checkRule()) {
+            return msg(102, null, '您没有权限操作');
+        }
         if ($this->param['password']) {
             $this->param['password'] = md5($this->param['password'].$this->param['username']);
         } else {
@@ -62,6 +68,9 @@ class AdminUser extends Comm
 
     public function update()
     {
+        if (!$this->checkRule()) {
+            return msg(102, null, '您没有权限操作');
+        }
         if (isset($this->param['id'])) {
             $id = $this->param['id'];
             unset($this->param['id']);
