@@ -7,10 +7,10 @@
 
 ## 简介
 
-[vue-thinkphp-admin](https://github.com/master-nan/vue-thinkphp-admin) 是针对动态路由权限设计的后端管理项目，是基于 [vue](https://github.com/vuejs/vue)+[thinkphp](https://github.com/top-think/framework/tree/master)开发的；前端权限与后端紧密相连，后端为前端提供可访问的路由，同时后端也增加了权限验证进一步加强系统安全。
+[vue-thinkphp-admin](https://github.com/master-nan/vue-thinkphp-admin) 是针对动态路由权限设计的后端管理项目，是基于 [vue](https://github.com/vuejs/vue)+[thinkphp5.0](https://github.com/top-think/framework/tree/master)开发的；前端权限与后端紧密相连，后端为前端提供可访问的路由，同时后端也增加了权限验证进一步加强系统安全。
 
 - [项目地址](https://github.com/master-nan/vue-thinkphp-admin)
-- [在线地址](http://47.75.138.7)
+- [在线地址](http://demo.walnutech.com)
 
 全部权限账号：
 `dev`   `111111`
