@@ -9,7 +9,14 @@ let request = async (requestMethod = 'get', requestConf) => {
   requestConf.headers['X-Requested-Token'] = sessionStorage.getItem('token') ? sessionStorage.getItem('token') : null
   requestConf.timeout = 5000
   requestConf.method = requestMethod
-  let response = await axios.request(requestConf)
+  let response = await axios.request(requestConf).catch(function (error) {
+    let data = {
+      code: 100,
+      data: null,
+      error: error + ''
+    }
+    return {data: data}
+  })
   return response.data
 }
 

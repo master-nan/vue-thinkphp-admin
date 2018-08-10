@@ -16,7 +16,7 @@ function msg($code, $data, $error = '')
       'data' => $data,
       'error' => $error
     ];
-    return json($data);
+    return json_encode($data);
 }
 
 function curl_get($url)

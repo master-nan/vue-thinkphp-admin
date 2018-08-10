@@ -5,12 +5,12 @@ import http from '@/utils/http'
 
 let response = async (res, vm) => {
   if (res.code === 101) {
-    message(res.error, 'error', 500)
+    message(res.error, 'error', 800)
     await sleep(1000)
     clearSome(vm)
     return false
   } else if (res.code === 102) {
-    message(res.error, 'error', 500)
+    message(res.error, 'error', 800)
     await sleep(1000)
     vm.$router.push('/index')
     return false

@@ -86,7 +86,7 @@
 
 编译过程中`node-sass`报错，请使用淘宝镜像然后`npm install node-sass --save`；安装`chromedriver`报错，请使用`npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver`。
 
-服务端启动需要`runtime`目录权限，如报错请执行`chmod -R 775 runtime/`;上传功能需要`public`目录写入权限，如报错请执行`chmod -R 775 public/`;请进入`server`目录再执行前面两句话。
+服务端启动需要`runtime`目录权限，如报错请执行`chmod -R 777 runtime/`;上传功能需要`public`目录写入权限，如报错请执行`chmod -R 777 public/`;请进入`server`目录再执行前面两句话。
 
 ## 最后
 

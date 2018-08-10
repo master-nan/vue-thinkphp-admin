@@ -50,7 +50,6 @@ export default {
       }
     },
     handleAvatarSuccess (res, file) {
-      console.log(res)
       util.response(res, this)
       if (res.data) {
         this.ruleForm.avatar = res.data.path + res.data.name

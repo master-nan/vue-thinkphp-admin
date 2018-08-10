@@ -14,6 +14,7 @@ class Files extends Comm
     {
         $path = sprintf('uploads/%s/', date('Ymd'));
         $file = request()->file('file');
+        $type = isset($this->param['type']) ? $this->param['type'] : 'avatar';
         if (!$file) {
             return msg(100, null, '请选择上传文件');
         }
@@ -31,7 +32,7 @@ class Files extends Comm
           'hash' => $file->hash(),
           'path' => $path,
           'create_at' => time(),
-          'type' => 'avatar'
+          'type' => $type
         ];
         $info = $file->validate($rule)->move(ROOT_PATH . DS . 'public/uploads');
         if (strstr($info->getSaveName(), DS)) {
