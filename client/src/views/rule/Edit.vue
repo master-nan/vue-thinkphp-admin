@@ -86,7 +86,7 @@ export default {
       this.loading = false
       if (res.code === 200) {
         this.ruleForm.title = res.data.title
-        this.ruleForm.status = !!res.data.remark
+        this.ruleForm.status = !!res.data.status
         this.keys = _.split(res.data.rs, ',')
         console.log(this.keys)
         this.ruleForm.remark = res.data.remark
