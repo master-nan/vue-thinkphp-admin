@@ -61,7 +61,7 @@ class Base extends Controller
                 $m = getLoginTree($menu->getMenus(['status'=>1]));
             } else {
                 $rule = model('Rule');
-                $r = $rule->getRuleById($ret['rule_id']);
+                $r = $rule->getRuleById($ret['r_id']);
                 if ($r) {
                     $ids = explode(',', $r['rs']);
                     $ret['rules'] = getRules($menu->getMenuByIds($ids));
