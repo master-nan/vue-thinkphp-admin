@@ -17,7 +17,10 @@
 
 [class^="nan-icon"], [class*=" nan-icon"] {
   font-family:"iconfont" !important;
-  font-size:20px;
+  font-size:18px;
+  margin-right: 5px;
+  width: 24px;
+  display: inline-block;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

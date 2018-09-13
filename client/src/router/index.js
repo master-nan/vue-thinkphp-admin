@@ -25,7 +25,7 @@ export const currentRouter = [
     component: comps['home'],
     meta: {
       title: '主页',
-      icon: 'el-icon-tickets'
+      icon: 'nan-icon-shouye'
     },
     children: [{
       path: 'index',
