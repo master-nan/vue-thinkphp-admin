@@ -38,20 +38,20 @@ class Base extends Controller
 
             //记录登录日志  ---begin
             $ip = $this->request->ip();
-            $url='http://ip.taobao.com/service/getIpInfo.php?ip='.$ip;
-            $result = json_decode(curl_get($url), true);
-            if ($result['code'] == 0) {
-                $res = [
-                'ip'        => $ip,
-                'area'      => $result['data']['area'],
-                'country'   => $result['data']['country'],
-                'region'    => $result['data']['region'],
-                'city'      => $result['data']['city'],
-                'isp'       => $result['data']['isp'],
-                'create_at' =>time(),
-              ];
-                model('AccessLogs')->saveLogs($res);
-            }
+            // $url='http://ip.taobao.com/service/getIpInfo.php?ip='.$ip;
+            // $result = json_decode(curl_get($url), true);
+            // if ($result['code'] == 0) {
+            //     $res = [
+            //     'ip'        => $ip,
+            //     'area'      => $result['data']['area'],
+            //     'country'   => $result['data']['country'],
+            //     'region'    => $result['data']['region'],
+            //     'city'      => $result['data']['city'],
+            //     'isp'       => $result['data']['isp'],
+            //     'create_at' =>time(),
+            //   ];
+            //     model('AccessLogs')->saveLogs($res);
+            // }
             // ---end
 
             unset($ret['password']);
