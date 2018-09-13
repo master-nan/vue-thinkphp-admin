@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 个人网站
+ Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 50723
+ Source Server Version : 50721
  Source Host           : localhost:3306
  Source Schema         : master
 
  Target Server Type    : MySQL
- Target Server Version : 50723
+ Target Server Version : 50721
  File Encoding         : 65001
 
- Date: 13/09/2018 15:45:59
+ Date: 13/09/2018 15:55:39
 */
 
 SET NAMES utf8mb4;
@@ -31,68 +31,42 @@ CREATE TABLE `m_access_logs` (
   `isp` varchar(16) DEFAULT NULL,
   `create_at` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of m_access_logs
 -- ----------------------------
 BEGIN;
-INSERT INTO `m_access_logs` VALUES (1, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1533630555);
-INSERT INTO `m_access_logs` VALUES (2, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1533631474);
-INSERT INTO `m_access_logs` VALUES (3, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1533695797);
-INSERT INTO `m_access_logs` VALUES (4, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1533706201);
-INSERT INTO `m_access_logs` VALUES (5, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1533706540);
-INSERT INTO `m_access_logs` VALUES (6, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1533804177);
-INSERT INTO `m_access_logs` VALUES (7, '125.95.121.9', '', '中国', '广东', '佛山', '电信', 1533804497);
-INSERT INTO `m_access_logs` VALUES (8, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1534043854);
-INSERT INTO `m_access_logs` VALUES (9, '43.224.1.181', '', '印度', '拉贾斯坦', 'XX', 'XX', 1534247350);
-INSERT INTO `m_access_logs` VALUES (10, '221.222.139.196', '', '中国', '北京', '北京', '联通', 1534301768);
-INSERT INTO `m_access_logs` VALUES (11, '114.229.127.150', '', '中国', '江苏', '镇江', '电信', 1534393242);
-INSERT INTO `m_access_logs` VALUES (12, '114.229.127.150', '', '中国', '江苏', '镇江', '电信', 1534393247);
-INSERT INTO `m_access_logs` VALUES (13, '114.229.127.150', '', '中国', '江苏', '镇江', '电信', 1534394019);
-INSERT INTO `m_access_logs` VALUES (14, '222.186.50.10', NULL, NULL, NULL, NULL, NULL, 1534403031);
-INSERT INTO `m_access_logs` VALUES (15, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1534403974);
-INSERT INTO `m_access_logs` VALUES (16, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1534404060);
-INSERT INTO `m_access_logs` VALUES (17, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1534404144);
-INSERT INTO `m_access_logs` VALUES (18, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1534404160);
-INSERT INTO `m_access_logs` VALUES (19, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1534404205);
-INSERT INTO `m_access_logs` VALUES (20, '222.186.50.10', NULL, NULL, NULL, NULL, NULL, 1534404224);
-INSERT INTO `m_access_logs` VALUES (21, '222.186.50.10', '', '中国', '江苏', '镇江', '电信', 1534484735);
-INSERT INTO `m_access_logs` VALUES (22, '222.186.50.10', NULL, NULL, NULL, NULL, NULL, 1534485054);
-INSERT INTO `m_access_logs` VALUES (23, '180.118.44.225', NULL, NULL, NULL, NULL, NULL, 1534683019);
-INSERT INTO `m_access_logs` VALUES (24, '180.118.44.225', NULL, NULL, NULL, NULL, NULL, 1534683233);
-INSERT INTO `m_access_logs` VALUES (25, '180.118.44.225', NULL, NULL, NULL, NULL, NULL, 1534686492);
-INSERT INTO `m_access_logs` VALUES (26, '222.186.101.50', NULL, NULL, NULL, NULL, NULL, 1534755501);
-INSERT INTO `m_access_logs` VALUES (27, '117.90.239.226', NULL, NULL, NULL, NULL, NULL, 1534942228);
-INSERT INTO `m_access_logs` VALUES (28, '122.190.94.142', NULL, NULL, NULL, NULL, NULL, 1535221240);
-INSERT INTO `m_access_logs` VALUES (29, '222.186.50.10', NULL, NULL, NULL, NULL, NULL, 1535591360);
-INSERT INTO `m_access_logs` VALUES (30, '114.248.205.31', NULL, NULL, NULL, NULL, NULL, 1535705388);
-INSERT INTO `m_access_logs` VALUES (31, '114.248.205.31', NULL, NULL, NULL, NULL, NULL, 1535705528);
-INSERT INTO `m_access_logs` VALUES (32, '59.175.60.79', NULL, NULL, NULL, NULL, NULL, 1535724487);
-INSERT INTO `m_access_logs` VALUES (33, '117.90.45.232', NULL, NULL, NULL, NULL, NULL, 1535724946);
-INSERT INTO `m_access_logs` VALUES (34, '117.90.217.106', NULL, NULL, NULL, NULL, NULL, 1535811944);
-INSERT INTO `m_access_logs` VALUES (35, '58.49.82.196', NULL, NULL, NULL, NULL, NULL, 1535846692);
-INSERT INTO `m_access_logs` VALUES (36, '58.49.82.196', NULL, NULL, NULL, NULL, NULL, 1535848836);
-INSERT INTO `m_access_logs` VALUES (37, '180.97.198.217', NULL, NULL, NULL, NULL, NULL, 1535898522);
-INSERT INTO `m_access_logs` VALUES (38, '171.43.191.7', NULL, NULL, NULL, NULL, NULL, 1535965178);
-INSERT INTO `m_access_logs` VALUES (39, '171.43.191.7', NULL, NULL, NULL, NULL, NULL, 1535965243);
-INSERT INTO `m_access_logs` VALUES (40, '171.43.191.7', NULL, NULL, NULL, NULL, NULL, 1535966745);
-INSERT INTO `m_access_logs` VALUES (41, '171.43.191.7', NULL, NULL, NULL, NULL, NULL, 1535974261);
-INSERT INTO `m_access_logs` VALUES (42, '59.175.60.79', NULL, NULL, NULL, NULL, NULL, 1535988646);
-INSERT INTO `m_access_logs` VALUES (43, '183.198.16.88', NULL, NULL, NULL, NULL, NULL, 1536076534);
-INSERT INTO `m_access_logs` VALUES (44, '183.198.16.88', NULL, NULL, NULL, NULL, NULL, 1536076569);
-INSERT INTO `m_access_logs` VALUES (45, '219.140.43.160', NULL, NULL, NULL, NULL, NULL, 1536145056);
-INSERT INTO `m_access_logs` VALUES (46, '49.70.153.247', NULL, NULL, NULL, NULL, NULL, 1536238274);
-INSERT INTO `m_access_logs` VALUES (47, '222.186.50.10', NULL, NULL, NULL, NULL, NULL, 1536304505);
-INSERT INTO `m_access_logs` VALUES (48, '114.221.244.183', NULL, NULL, NULL, NULL, NULL, 1536644337);
-INSERT INTO `m_access_logs` VALUES (49, '114.221.244.183', NULL, NULL, NULL, NULL, NULL, 1536649325);
-INSERT INTO `m_access_logs` VALUES (50, '114.221.244.183', NULL, NULL, NULL, NULL, NULL, 1536650964);
-INSERT INTO `m_access_logs` VALUES (51, '222.186.50.10', NULL, NULL, NULL, NULL, NULL, 1536653921);
-INSERT INTO `m_access_logs` VALUES (52, '222.186.50.10', NULL, NULL, NULL, NULL, NULL, 1536654454);
-INSERT INTO `m_access_logs` VALUES (53, '114.221.244.183', NULL, NULL, NULL, NULL, NULL, 1536659941);
-INSERT INTO `m_access_logs` VALUES (54, '114.221.244.183', NULL, NULL, NULL, NULL, NULL, 1536663993);
-INSERT INTO `m_access_logs` VALUES (55, '49.77.145.156', NULL, NULL, NULL, NULL, NULL, 1536734193);
-INSERT INTO `m_access_logs` VALUES (56, '101.80.51.87', NULL, NULL, NULL, NULL, NULL, 1536823638);
+INSERT INTO `m_access_logs` VALUES (1, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533539406);
+INSERT INTO `m_access_logs` VALUES (2, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533539517);
+INSERT INTO `m_access_logs` VALUES (3, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533540472);
+INSERT INTO `m_access_logs` VALUES (4, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533540532);
+INSERT INTO `m_access_logs` VALUES (5, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533541000);
+INSERT INTO `m_access_logs` VALUES (6, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533541071);
+INSERT INTO `m_access_logs` VALUES (7, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533541193);
+INSERT INTO `m_access_logs` VALUES (8, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533541325);
+INSERT INTO `m_access_logs` VALUES (9, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533541403);
+INSERT INTO `m_access_logs` VALUES (10, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533541575);
+INSERT INTO `m_access_logs` VALUES (11, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533541601);
+INSERT INTO `m_access_logs` VALUES (12, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533544764);
+INSERT INTO `m_access_logs` VALUES (13, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533547459);
+INSERT INTO `m_access_logs` VALUES (14, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533547586);
+INSERT INTO `m_access_logs` VALUES (15, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533547634);
+INSERT INTO `m_access_logs` VALUES (16, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533547840);
+INSERT INTO `m_access_logs` VALUES (17, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533547892);
+INSERT INTO `m_access_logs` VALUES (18, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533547991);
+INSERT INTO `m_access_logs` VALUES (19, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533548018);
+INSERT INTO `m_access_logs` VALUES (20, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533548057);
+INSERT INTO `m_access_logs` VALUES (21, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533548090);
+INSERT INTO `m_access_logs` VALUES (22, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533549630);
+INSERT INTO `m_access_logs` VALUES (23, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533549645);
+INSERT INTO `m_access_logs` VALUES (24, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1533549951);
+INSERT INTO `m_access_logs` VALUES (25, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1536803816);
+INSERT INTO `m_access_logs` VALUES (26, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1536818396);
+INSERT INTO `m_access_logs` VALUES (27, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1536820769);
+INSERT INTO `m_access_logs` VALUES (28, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1536821043);
+INSERT INTO `m_access_logs` VALUES (29, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1536821657);
+INSERT INTO `m_access_logs` VALUES (30, '0.0.0.0', '', 'XX', 'XX', '内网IP', '内网IP', 1536822747);
 COMMIT;
 
 -- ----------------------------
@@ -105,7 +79,7 @@ CREATE TABLE `m_admin_user` (
   `username` varchar(64) DEFAULT NULL,
   `password` varchar(64) DEFAULT NULL,
   `create_at` int(10) DEFAULT NULL,
-  `rule_id` tinyint(3) DEFAULT NULL,
+  `r_id` tinyint(3) DEFAULT NULL,
   `d_id` tinyint(3) DEFAULT '0' COMMENT '部门id',
   `p_id` tinyint(3) DEFAULT '0' COMMENT '岗位',
   `last_login_at` int(10) DEFAULT '0' COMMENT '上次登录时间',
@@ -113,15 +87,16 @@ CREATE TABLE `m_admin_user` (
   `avatar` varchar(255) DEFAULT NULL COMMENT '头像路径',
   `status` tinyint(1) DEFAULT '1' COMMENT '当前状态0禁用',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of m_admin_user
 -- ----------------------------
 BEGIN;
-INSERT INTO `m_admin_user` VALUES (1, '管理员', 'admin', '417a4f7ed696ae1eb4f354c9f7b6c67c', NULL, NULL, NULL, NULL, 1536304505, 1534404233, NULL, 1);
-INSERT INTO `m_admin_user` VALUES (2, '测试', 'dev', 'c9a973c677899e92518c823c31527716', NULL, 1, 5, 6, 1536823638, 1536654126, NULL, 1);
-INSERT INTO `m_admin_user` VALUES (3, 'test', 'test', 'f2e52e3efb6647bc3aceb89349568b88', NULL, 2, 6, 9, 1536076534, 1536076561, NULL, 1);
+INSERT INTO `m_admin_user` VALUES (1, '管理员', 'admin', 'cea3e8e1659582206e0be32539729e9f', NULL, NULL, NULL, NULL, 1536822747, 1536822238, NULL, 1);
+INSERT INTO `m_admin_user` VALUES (2, '测试', 'dev', 'c9a973c677899e92518c823c31527716', NULL, 1, 5, 6, 1533547892, 1533547981, NULL, 1);
+INSERT INTO `m_admin_user` VALUES (3, 'test', 'test', 'f2e52e3efb6647bc3aceb89349568b88', NULL, 2, 6, 9, 1533549645, 1533549944, NULL, 1);
+INSERT INTO `m_admin_user` VALUES (4, '231', '321', '91f544db40265dbe9eb4a4580634ba55', NULL, 2, 5, 7, 0, NULL, NULL, 1);
 COMMIT;
 
 -- ----------------------------
@@ -134,19 +109,20 @@ CREATE TABLE `m_department` (
   `remark` varchar(255) DEFAULT NULL,
   `status` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='部门表';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='部门表';
 
 -- ----------------------------
 -- Records of m_department
 -- ----------------------------
 BEGIN;
-INSERT INTO `m_department` VALUES (1, '总经办', NULL, 1);
+INSERT INTO `m_department` VALUES (1, '总经办1', '321', 1);
 INSERT INTO `m_department` VALUES (2, '财务部', NULL, 1);
 INSERT INTO `m_department` VALUES (3, '研发部', NULL, 1);
 INSERT INTO `m_department` VALUES (4, '设计部', NULL, 1);
 INSERT INTO `m_department` VALUES (5, '市场部', NULL, 1);
 INSERT INTO `m_department` VALUES (6, '测试部', NULL, 1);
 INSERT INTO `m_department` VALUES (7, '项目部', NULL, 1);
+INSERT INTO `m_department` VALUES (8, '321', '11', 1);
 COMMIT;
 
 -- ----------------------------
@@ -218,7 +194,7 @@ CREATE TABLE `m_position` (
   `remark` varchar(200) DEFAULT NULL COMMENT '岗位备注',
   `status` tinyint(1) DEFAULT '1' COMMENT '状态1启用,0禁用',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='岗位表';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='岗位表';
 
 -- ----------------------------
 -- Records of m_position
@@ -226,7 +202,7 @@ CREATE TABLE `m_position` (
 BEGIN;
 INSERT INTO `m_position` VALUES (1, '后端开发工程师', '1122223111', 1);
 INSERT INTO `m_position` VALUES (2, '前端开发工程师', '擦擦', 1);
-INSERT INTO `m_position` VALUES (3, '设计师', NULL, 1);
+INSERT INTO `m_position` VALUES (3, '设计师', '231', 1);
 INSERT INTO `m_position` VALUES (4, '文案策划', NULL, 1);
 INSERT INTO `m_position` VALUES (5, '产品助理', NULL, 1);
 INSERT INTO `m_position` VALUES (6, '总经理', NULL, 1);
@@ -244,7 +220,7 @@ DROP TABLE IF EXISTS `m_rule`;
 CREATE TABLE `m_rule` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL COMMENT '名称',
-  `rs` varchar(255) DEFAULT NULL COMMENT '权限id',
+  `rs` varchar(4000) DEFAULT NULL COMMENT '权限id',
   `remark` varchar(256) DEFAULT NULL COMMENT '备注',
   `status` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`id`)
