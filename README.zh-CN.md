@@ -1,9 +1,26 @@
+<h3>Update:2.0  2018-9-13</h3>
+
 <p algin="center">
-  <h3>vue-thinkphp-admin</h3>
+  <h1>vue-thinkphp-admin</h1>
 </p>
 
 
 简体中文 | [English](./README.md)
+
+## 最新更新2.0 2018-9-13
+
+相比之前版本改动较大，主要有以下几点
+
+- 1.合并部分页面的增加和修改操作在当前页面完成，减少页面跳转
+- 2.前后端增加删除功能,`http.js`页面加入`delete`请求方式
+- 3.取消页面过多css以及无用代码
+- 4.去掉`node-sass`组件
+- 5.取消侧边栏伸缩以及只有一个子菜单时不显示下拉的功能
+- 6.取消面包屑跳转
+- 7.修改菜单页面二级菜单的显示效果(取消原有第三方的展开方法)
+- 8.优化页面结构以及侧边栏配色
+- 9.删除一些方法不必要的等待效果
+- 10.数据库字段部分修改,最新文件在`sql`目录下
 
 ## 简介
 
@@ -40,7 +57,7 @@
   |  |  |-store              全局状态管理目录
   |  |  |-utils              工具类目录
   |  |  |  |-components.js   所有路由component在此目录引入，配合后台权限使用
-  |  |  |  |-http.js         引入axios，提供get/post/put方法，如需更多自行增加
+  |  |  |  |-http.js         引入axios，提供get/post/put/delete方法，如需更多自行增加
   |  |  |  └─index.js        全局一些公共方法
   |  |  |-ivews              所有页面目录
   |  |  └─...    
@@ -84,7 +101,9 @@
 
 ## 注意
 
-编译过程中`node-sass`报错，请使用淘宝镜像然后`npm install node-sass --save`；安装`chromedriver`报错，请使用`npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver`。
+编译过程中`node-sass`报错，请使用淘宝镜像然后`npm install node-sass --save`(已废弃)
+
+安装`chromedriver`报错，请使用`npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver`
 
 服务端启动需要`runtime`目录权限，如报错请执行`chmod -R 777 runtime/`;上传功能需要`public`目录写入权限，如报错请执行`chmod -R 777 public/`;请进入`server`目录再执行前面两句话。
 

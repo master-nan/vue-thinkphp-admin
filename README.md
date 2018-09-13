@@ -1,5 +1,7 @@
+<h3>Update:2.0  2018-9-13</h3>
+
 <p algin="center">
-  <h3>vue-thinkphp-admin</h3>
+  <h1>vue-thinkphp-admin</h1>
 </p>
 
 
@@ -38,7 +40,7 @@ Main Directory Structure and Document Introduction
       |  |  |-store              全局状态管理目录
       |  |  |-utils              工具类目录
       |  |  |  |-components.js   所有路由component在此目录引入，配合后台权限使用
-      |  |  |  |-http.js         引入axios，提供get/post/put方法，如需更多自行增加
+      |  |  |  |-http.js         引入axios，提供get/post/put/delete方法，如需更多自行增加
       |  |  |  └─index.js        全局一些公共方法
       |  |  |-ivews              所有页面目录
       |  |  └─...     

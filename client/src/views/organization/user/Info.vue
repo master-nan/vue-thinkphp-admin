@@ -1,7 +1,7 @@
 <template lang="pug">
   div#Info
     div.content
-      el-form(:model="ruleForm" :rules="rules" ref="ruleForm" style="text-align:left" label-width="100px" v-loading="loading")
+      el-form(:model="ruleForm" :rules="rules" ref="ruleForm" style="text-align:left" label-width="60px" v-loading="loading")
         el-form-item(label="昵称" prop="nickname")
           el-input(v-model="ruleForm.nickname")
         el-form-item(label="头像" prop="status")
@@ -90,9 +90,9 @@ export default {
   width: 100%;
   height: 100%;
   &>.content{
-    width: 30%;
-    min-width: 300px;
-    padding: 3%;
+    width: 20%;
+    min-width: 200px;
+    padding: 1%;
 
     .avatar-uploader .el-upload {
         border: 1px dashed #d9d9d9;

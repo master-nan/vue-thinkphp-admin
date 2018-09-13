@@ -2,7 +2,7 @@
   div#login-container(v-loading="loading")
     div.content
       div.login.fl
-        el-header 后台管理系统
+        el-header.text-center 后台管理系统
         el-main
           el-form(:model="ruleForm" :rules="rules" ref="ruleForm")
             el-form-item(prop="username")
@@ -15,9 +15,9 @@
                 i(slot="prefix")
                   svg.icon.fs-20.mt-10(aria-hidden="true" @click="toLink")
                     use(xlink:href="#nan-icon-password")
-            el-form-item
+            el-form-item.text-center
               el-button.bt-bg(type="primary" style="width:266px;margin-top:10px;" @click="submitForm('ruleForm')") 登录
-        el-footer
+        el-footer.text-center
           svg.icon(aria-hidden="true" @click="toLink")
             use(xlink:href="#nan-icon-github")
 </template>

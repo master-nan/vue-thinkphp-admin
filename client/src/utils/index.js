@@ -90,6 +90,11 @@ let setUser = (data, vm) => {
   vm.$store.dispatch('setUserInfo', user)
 }
 
+// 深拷贝
+let cloneDeep = (val) => {
+  return _.cloneDeep(val)
+}
+
 export default {
   response,
   message,
@@ -98,5 +103,6 @@ export default {
   setMenus,
   setComponent,
   clearSome,
-  setUser
+  setUser,
+  cloneDeep
 }

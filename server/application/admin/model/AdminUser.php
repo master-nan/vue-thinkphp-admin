@@ -33,7 +33,7 @@ class AdminUser extends Model
         $res = $this->alias('u')
                     ->join('department d', 'u.d_id = d.id', 'LEFT')
                     ->join('position p', 'u.p_id = p.id', 'LEFT')
-                    ->join('rule r', 'u.rule_id = r.id', 'LEFT')
+                    ->join('rule r', 'u.r_id = r.id', 'LEFT')
                     ->field('u.*,p.name as p_name, d.name as d_name, r.rs')
                     ->order('id asc')
                     ->where($data)->select();
@@ -84,6 +84,22 @@ class AdminUser extends Model
             return true;
         } catch (\Exception $e) {
             $this->error = '更新失败';
+            return false;
+        }
+    }
+
+    public function del($id = 0)
+    {
+        try {
+            $res = $this->where('id', $id)->delete();
+            if ($res) {
+                return $res;
+            } else {
+                $this->error = '删除失败';
+                return false;
+            }
+        } catch (\Exception $e) {
+            $this->error = '删除失败';
             return false;
         }
     }

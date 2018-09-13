@@ -94,7 +94,20 @@ class Menu extends Comm
 
     public function delete()
     {
-        return msg(100, null, '暂无删除功能');
+        if (!$this->checkRule()) {
+            return msg(401, null, '您没有权限操作');
+        }
+        if ($this->param['id']) {
+            $id = $this->param['id'];
+        } else {
+            return msg(100, null, '参数错误');
+        }
+        $ret = $this->model->del($id);
+        if ($ret) {
+            return msg(200, null, '删除成功');
+        } else {
+            return msg(100, null, $this->model->getError());
+        }
     }
 
     public function enable()

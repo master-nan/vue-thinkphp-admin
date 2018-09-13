@@ -1,15 +1,12 @@
 <template lang="pug">
-  el-menu#top(mode="horizontal")
-    div.fold(:class="{'angle':isCollapse}")
-      i(@click="setSidebar")
-        svg.icon.fs-20(aria-hidden="true")
-          use(xlink:href="#nan-icon-caidanguanli")
+  div.head
     el-breadcrumb(separator="/")
       transition-group(name="breadcrumb")
-        el-breadcrumb-item(v-for="(item,index)  in breadcrumbList" :key="item.path" v-if='item.meta.title')
-          span.no-redirect(v-if='item.redirect==="noredirect"||index==breadcrumbList.length-1') {{item.meta.title}}
-          router-link(v-else :to="item.redirect||item.path") {{item.meta.title}}
-    el-dropdown(:class="{'el-dropdown--collapse':isCollapse}" @command="handleCommand")
+        el-breadcrumb-item(v-for="(item,index) in items" :key="item.path" :disabled='true')
+          span {{item.meta.title}}
+          //- span(v-if='item.redirect===""||index==items.length-1') {{item.meta.title}}
+          //- router-link(v-else :to="item.redirect||item.path") {{item.meta.title}}
+    el-dropdown(@command="handleCommand")
       div
         span.name  {{userInfo['nickname']}}
         img.el-dropdown-link(v-if="userInfo['avatar']" :src="userInfo['avatar']")
@@ -51,31 +48,23 @@ export default {
         pass2: [
           { required: true, message: '新密码不能为空', trigger: 'blur' }
         ]
-      }
+      },
+      items: null
     }
   },
-  components: {
-    // SidebarList
-  },
   computed: {
-    isCollapse () {
-      return !this.$store.getters.getSidebarStatus
-    },
     userInfo () {
       return this.$store.getters.getUserInfo
     }
   },
   methods: {
-    setSidebar () {
-      this.$store.dispatch('setSidebarStatus', !this.$store.getters.getSidebarStatus)
-    },
     getBreadcrumb () {
       let matched = this.$route.matched.filter(item => item.name)
       const first = matched[0]
       if (first && first.name !== 'index') {
         matched = [{ path: '/index', meta: { title: '首页' } }].concat(matched)
       }
-      this.breadcrumbList = matched
+      this.items = matched
     },
     async handleCommand (command) {
       switch (command) {
@@ -137,46 +126,32 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-$size: 60px;
-#top{
-  height: $size;
-  line-height: $size;
+<style lang="less" scoped>
+.head{
   box-shadow: 0px 4px 5px #e3e3e3;
   -moz-box-shadow: 0px 4px 5px #e3e3e3;
   position: fixed;
-  width: 100%;
+  width: calc(100% - 200px);
   z-index:50;
-
-  .fold{
+  left:200px;
+}
+.el-breadcrumb{
     float: left;
-    line-height: $size;
-    height: $size;
-    width: $size;
-    transition: transform 0.5s;
-    cursor:pointer
-  }
-  .angle {
-    transition: transform 0.5s;
-    transform: rotate(90deg);
-  }
-
-  .el-breadcrumb{
-    float: left;
-    line-height: $size;
-    height: $size;
-
+    margin-left: 20px;
+    line-height: 60px;
+    height: 60px;
+    width: 500px;
     .no-redirect {
       color: #97a8be;
       cursor: text;
     }
-  }
+}
 
-  .el-dropdown{
+.el-dropdown{
     float: right;
-    line-height: $size;
-    height: $size;
-    margin-right: 220px;
+    margin-right: 20px;
+    line-height: 60px;
+    height: 60px;
     .name{
       display: block;
       margin-right: 10px;
@@ -190,11 +165,5 @@ $size: 60px;
       margin-top: 10px;
       display: inline-block;
     }
-  }
-
-  .el-dropdown--collapse{
-    margin-right: 56px;
-  }
-
 }
 </style>

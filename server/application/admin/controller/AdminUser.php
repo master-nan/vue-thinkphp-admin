@@ -53,11 +53,6 @@ class AdminUser extends Comm
         } else {
             unset($this->param['password']);
         }
-        if ($this->param['status'] == 'true') {
-            $this->param['status'] = 1;
-        } else {
-            $this->param['status'] = 0;
-        }
         $ret = $this->model->saveUser($this->param);
         if ($ret) {
             return msg(200, null, '添加成功');
@@ -82,11 +77,6 @@ class AdminUser extends Comm
         } else {
             unset($this->param['password']);
         }
-        if ($this->param['status'] == 'true') {
-            $this->param['status'] = 1;
-        } else {
-            $this->param['status'] = 0;
-        }
         $ret = $this->model->updateUser($id, $this->param);
         if ($ret) {
             return msg(200, null, '更新成功');
@@ -97,7 +87,20 @@ class AdminUser extends Comm
 
     public function delete()
     {
-        return msg(100, null, '暂无删除功能');
+        if (!$this->checkRule()) {
+            return msg(401, null, '您没有权限操作');
+        }
+        if ($this->param['id']) {
+            $id = $this->param['id'];
+        } else {
+            return msg(100, null, '参数错误');
+        }
+        $ret = $this->model->del($id);
+        if ($ret) {
+            return msg(200, null, '删除成功');
+        } else {
+            return msg(100, null, $this->model->getError());
+        }
     }
 
     public function setUserInfo()

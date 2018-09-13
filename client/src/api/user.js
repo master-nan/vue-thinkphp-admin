@@ -66,6 +66,12 @@ let enable = async (data) => {
   return result
 }
 
+let del = async (id) => {
+  let url = path + '/' + id
+  let result = await http.del(url, {})
+  return result
+}
+
 export default{
   index,
   save,
@@ -73,5 +79,6 @@ export default{
   update,
   changePass,
   setUserInfo,
-  enable
+  enable,
+  del
 }

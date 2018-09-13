@@ -58,14 +58,14 @@ class Base extends Controller
             $token = md5(microtime());
 
             if ($ret['id'] == 1) {
-                $m = getTree($menu->getMenus(['status'=>1]));
+                $m = getLoginTree($menu->getMenus(['status'=>1]));
             } else {
                 $rule = model('Rule');
                 $r = $rule->getRuleById($ret['rule_id']);
                 if ($r) {
                     $ids = explode(',', $r['rs']);
                     $ret['rules'] = getRules($menu->getMenuByIds($ids));
-                    $m = getTree($menu->getMenuByIds($ids));
+                    $m = getLoginTree($menu->getMenuByIds($ids));
                 } else {
                     $m = [];
                 }

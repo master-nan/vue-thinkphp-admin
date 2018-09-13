@@ -7,7 +7,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/icon/iconfont.css'
 // import './assets/icon/iconfont.js'  //webpack时由于eslint验证会报错
-import './assets/style/index.scss'
+import './assets/style/index.less'
 import './filters'
 Vue.config.productionTip = false
 Vue.use(ElementUI)

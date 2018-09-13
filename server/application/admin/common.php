@@ -34,6 +34,41 @@ function getTree($data = [])
     return $arr;
 }
 
+// 获取菜单树
+function getLoginTree($data = [])
+{
+    if (empty($data)) {
+        return [];
+    }
+    $arr = [];
+    foreach ($data as $key => &$value) {
+        $value['value'] = $value['id'];
+        $value['label'] = $value['title'];
+        if ($value['pid'] == 0 && $value['component'] && $value['component'] != '') {
+            array_push($arr, $value);
+            unset($value);
+        }
+    }
+
+    foreach ($data as $key => &$value) {
+        if ($value['pid'] != 0 && $value['component'] && $value['component'] != '') {
+            unset($value['redirect']);
+            foreach ($arr as $k => &$v) {
+                if ($v['id'] == $value['pid']) {
+                    if (isset($v['children'])) {
+                        array_push($v['children'], $value);
+                    } else {
+                        $v['children'] = [];
+                        array_push($v['children'], $value);
+                    }
+                }
+            }
+            unset($value);
+        }
+    }
+    return $arr;
+}
+
 function getRules($data = [])
 {
     $arr = [];

@@ -59,4 +59,20 @@ class Position extends Model
             return false;
         }
     }
+
+    public function del($id = 0)
+    {
+        try {
+            $res = $this->where('id', $id)->delete();
+            if ($res) {
+                return $res;
+            } else {
+                $this->error = '删除失败';
+                return false;
+            }
+        } catch (\Exception $e) {
+            $this->error = '删除失败';
+            return false;
+        }
+    }
 }

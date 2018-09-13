@@ -24,30 +24,80 @@ export const currentRouter = [
     path: '',
     component: comps['home'],
     meta: {
-      title: '首页',
-      icon: '#nan-icon-shouye'
+      title: '主页',
+      icon: 'el-icon-tickets'
     },
-    redirect: 'index',
     children: [{
       path: 'index',
       component: () => import('@/views/public/Index'),
       name: 'index',
-      meta: { title: '首页', icon: '#nan-icon-shouye' }
+      meta: { title: '首页' }
     }]
   },
   {
     path: '/user',
     component: comps['home'],
-    redirect: '/user/info',
     hidden: true,
     children: [{
-      path: 'info',
-      component: () => import('@/views/user/Info'),
+      path: '/info',
+      component: () => import('@/views/organization/user/Info'),
       name: 'info',
       meta: { title: '个人信息' },
       hidden: true
     }]
   }
+  // {
+  //   path: '/organization',
+  //   component: comps['home'],
+  //   name: 'organization',
+  //   meta: {
+  //     title: '组织架构',
+  //     icon: 'el-icon-menu'
+  //   },
+  //   children: [
+  //     {
+  //       path: 'department/index',
+  //       component: () => import('@/views/organization/department/Index.vue'),
+  //       name: 'department',
+  //       meta: { title: '部门管理' }
+  //     },
+  //     {
+  //       path: 'position/index',
+  //       component: () => import('@/views/organization/position/Index.vue'),
+  //       name: 'position',
+  //       meta: { title: '岗位管理' }
+  //     },
+  //     {
+  //       path: 'user/index',
+  //       component: () => import('@/views/organization/user/Index.vue'),
+  //       name: 'user',
+  //       meta: { title: '用户管理' }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/system',
+  //   component: comps['home'],
+  //   name: 'system',
+  //   meta: {
+  //     title: '系统管理',
+  //     icon: 'el-icon-setting'
+  //   },
+  //   children: [
+  //     {
+  //       path: 'menu/index',
+  //       component: () => import('@/views/system/menu/Index.vue'),
+  //       name: 'menu',
+  //       meta: { title: '菜单管理' }
+  //     },
+  //     {
+  //       path: 'rule/index',
+  //       component: () => import('@/views/system/rule/Index.vue'),
+  //       name: 'rule',
+  //       meta: { title: '权限管理', icon: 'mdi-account-key' }
+  //     }
+  //   ]
+  // }
 ]
 
 export const router = new Router({
