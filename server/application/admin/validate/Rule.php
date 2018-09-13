@@ -6,12 +6,12 @@ use think\Validate;
 class Rule extends Validate
 {
     protected $rule = [
-        'title' => 'require',
+        'name' => 'require',
         'rs' => 'require'
     ];
 
     protected $message  =   [
-        'title.require' => '权限名称不能为空',
+        'name.require' => '权限名称不能为空',
         'rs.require' => '权限不能为空',
     ];
 
