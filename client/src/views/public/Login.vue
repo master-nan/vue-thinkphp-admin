@@ -92,7 +92,7 @@ export default{
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 #login-container{
   position: relative;
   width: 100%;

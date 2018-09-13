@@ -21,7 +21,7 @@ export default{
   }
 }
 </script>
-<style lang="scss">
+<style lang="less">
   #st-404{
     background-color: #e2fcfe;
     width: 100%;
