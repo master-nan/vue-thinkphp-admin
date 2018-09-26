@@ -1,8 +1,8 @@
 <template lang="pug">
   div
-    el-button.fr.mb-20(type="primary" icon="el-icon-plus" circle @click="add")
+    el-button.mb-20(type="primary" icon="el-icon-plus" @click="add") 添加
     el-table(:data="data" border v-loading="loading")
-      el-table-column(prop="index" label="序号" align="center")
+      el-table-column(prop="index" label="序号" align="center" width="100")
         template(slot-scope="scope")
           span {{scope.$index + 1}}
       el-table-column(prop="name" label="部门名称" align="center")
@@ -10,7 +10,7 @@
       el-table-column(prop="status" label="状态" align="center")
         template(slot-scope="scope")
           el-tag(:type="scope.row.status | statusFilterType") {{scope.row.status | statusFilter}}
-      el-table-column(label="操作" min-width="150" align="center")
+      el-table-column(label="操作" width="260" align="center")
         template(slot-scope="scope")
           el-button(size="mini" type="primary" plain @click="edit(scope.row)") 编辑
           el-button(v-if="scope.row.status==1" size="mini" plain type="warning" @click="enable(scope.row)") 禁用

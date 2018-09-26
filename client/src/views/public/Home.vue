@@ -31,6 +31,19 @@ export default {
 }
 </script>
 <style scoped>
+  .fade-transform-leave-active,
+  .fade-transform-enter-active {
+    transition: all .5s;
+  }
+  .fade-transform-enter {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  .fade-transform-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
   .el-header, .el-footer {
     /* background-color: #B3C0D1; */
     /* color: #333; */
@@ -43,10 +56,7 @@ export default {
     z-index:1;
   }
   .el-aside {
-    /* background-color: #D3DCE6;
-    color: #333; */
-    /* text-align: center;
-    line-height: 200px; */
+    height: 100%;
   }
 
   .el-main {

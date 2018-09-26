@@ -1,9 +1,9 @@
 <template lang="pug">
   div
-    el-button.fr.mb-20(type="primary" icon="el-icon-plus" circle @click="add")
+    el-button.mb-20(type="primary" icon="el-icon-plus" @click="add") 添加
     el-table(:data="data" border v-loading="loading" :row-class-name="tableRowClassName")
-      el-table-column(prop="id" label="ID" align="center")
-      el-table-column(prop="pid" label="PID" align="center")
+      el-table-column(prop="id" label="ID" align="center" width="100")
+      el-table-column(prop="pid" label="PID" align="center" width="100")
       el-table-column(prop="title" label="菜单标题" align="center")
       el-table-column(prop="hidden" label="左侧是否显示" align="center")
         template(slot-scope="scope")
@@ -11,7 +11,7 @@
       el-table-column(prop="status" label="状态" align="center")
         template(slot-scope="scope")
           el-tag(:type="scope.row.status | statusFilterType") {{scope.row.status | statusFilter}}
-      el-table-column(label="操作" min-width="150" align="center")
+      el-table-column(label="操作" width="300" align="center")
         template(slot-scope="scope")
           el-button(size="mini" type="primary" plain @click="edit(scope.row)") 编辑
           el-button(v-if="scope.row.status==1" size="mini" plain type="warning" @click="enable(scope.row)") 禁用
