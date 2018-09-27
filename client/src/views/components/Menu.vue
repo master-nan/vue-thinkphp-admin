@@ -38,19 +38,23 @@ export default {
 <style lang="less">
 .sbar{
   height: 100%;
+  width:200px;
+  border-right: 1px solid #e3e3e3;
+  // overflow-y: hidden !important;
+  // margin-right: -1px;
 }
 .sbar .el-scrollbar__wrap{
   height: 100%;
   overflow-x: hidden;
 }
 .sbar .el-scrollbar__view{
-    border-right: 1px solid #e3e3e3;
     position: relative;
     height: 100%;
 }
-.sbar .el-menu{
+.sbar .el-scrollbar__view > .el-menu{
   height: 100%;
   font-weight: 500;
   border-right: 0px;
+
 }
 </style>
