@@ -28,6 +28,8 @@
             el-option(v-for="item in options" :key="item.id" :label="item.title" :value="item.id")
         el-form-item(label="路由名称")
           el-input(v-model="ruleForm.name" placeholder="请确保值唯一")
+        el-form-item(v-if="ruleForm.pid == 0" label="图标")
+          el-input(v-model="ruleForm.icon")
         el-form-item(label="左侧隐藏")
           el-switch(v-model="ruleForm.hidden")
         el-form-item(label="菜单主体")
@@ -52,7 +54,7 @@ export default{
       dialogFormVisible: false,
       ruleForm: {
         title: '',
-        pid: '',
+        pid: null,
         name: '',
         icon: '',
         component: '',
@@ -129,7 +131,7 @@ export default{
         this.$refs['ruleForm'].resetFields()
         delete this.ruleForm.id
         this.ruleForm.title = ''
-        this.ruleForm.pid = ''
+        this.ruleForm.pid = null
         this.ruleForm.name = ''
         this.ruleForm.icon = ''
         this.ruleForm.component = ''
