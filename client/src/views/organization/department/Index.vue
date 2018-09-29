@@ -17,7 +17,7 @@
           el-button(v-else size="mini" plain type="success" @click="enable(scope.row)") 启用
           el-button(size="mini" type="danger" plain @click="del(scope.row,scope.$index)") 删除
     el-dialog(:title="title" :visible.sync="dialogFormVisible" width="500px")
-      el-form(:model="ruleForm" :rules="rules" ref="form" label-width="80px")
+      el-form(v-loading="f_loading" :model="ruleForm" :rules="rules" ref="form" label-width="80px")
         el-form-item(label="部门名称" label-width="80px" prop="name")
           el-input(v-model="ruleForm.name")
         el-form-item(label="备注" label-width="80px")
@@ -34,6 +34,7 @@ export default{
     return {
       data: [],
       loading: false,
+      f_loading: false,
       dialogFormVisible: false,
       ruleForm: {
         name: null,
@@ -86,7 +87,7 @@ export default{
       this.ruleForm.id = e.id
     },
     async submit () {
-      this.loading = true
+      this.f_loading = true
       this.$refs['form'].validate(async (valid) => {
         if (valid) {
           let res = []
@@ -96,7 +97,7 @@ export default{
             res = await api.department.update(this.ruleForm)
           }
           util.response(res, this)
-          this.loading = false
+          this.f_loading = false
           if (res.code === 200) {
             util.message('操作成功')
             this.dialogFormVisible = false
@@ -105,7 +106,7 @@ export default{
             util.message(res.error, 'error')
           }
         } else {
-          this.loading = false
+          this.f_loading = false
           return false
         }
       })

@@ -21,7 +21,7 @@
           el-button(v-else-if="scope.row.children && !scope.row.expand" size="mini" type="info" plain @click="expand(scope.row,scope.$index)") 展开
           el-button(size="mini" type="danger" plain @click="del(scope.row,scope.$index)") 删除
     el-dialog(:title="title" :visible.sync="dialogFormVisible" width="500px")
-      el-form(:model="ruleForm" :rules="rules" ref="ruleForm" label-width="80px")
+      el-form(v-loading="f_loading" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="80px")
         el-form-item(label="菜单标题" prop="title")
           el-input(v-model="ruleForm.title" placeholder="左侧显示")
         el-form-item(label="父节点" prop="pid")
@@ -52,6 +52,7 @@ export default{
     return {
       data: [],
       loading: false,
+      f_loading: false,
       dialogFormVisible: false,
       ruleForm: {
         title: '',
@@ -156,7 +157,7 @@ export default{
       this.ruleForm.sort = e.sort
     },
     async submit () {
-      this.loading = true
+      this.f_loading = true
       this.$refs['ruleForm'].validate(async (valid) => {
         if (valid) {
           let res = []
@@ -166,7 +167,7 @@ export default{
             res = await api.menu.update(this.ruleForm)
           }
           util.response(res, this)
-          this.loading = false
+          this.f_loading = false
           if (res.code === 200) {
             this.dialogFormVisible = false
             util.message('操作成功')
@@ -175,7 +176,7 @@ export default{
             util.message(res.error, 'error')
           }
         } else {
-          this.loading = false
+          this.f_loading = false
           return false
         }
       })

@@ -29,7 +29,7 @@
           el-button(v-else size="mini" plain type="success" @click="enable(scope.row)") 启用
           el-button(size="mini" type="danger" plain @click="del(scope.row,scope.$index)") 删除
     el-dialog(:title="title" :visible.sync="dialogFormVisible" width="500px" height="500px")
-      el-form(:model="ruleForm" :rules="rules" ref="ruleForm" label-width="80px")
+      el-form(v-loading="f_loading" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="80px")
         el-form-item(label="昵称" prop="nickname")
           el-input(v-model="ruleForm.nickname")
         el-form-item(label="用户名" prop="username" :disabled="type != 1")
@@ -57,6 +57,7 @@ export default{
     return {
       data: [],
       loading: false,
+      f_loading: false,
       dialogFormVisible: false,
       ruleForm: {
         nickname: '',
@@ -141,7 +142,7 @@ export default{
       this.ruleForm.password = ''
     },
     async submit () {
-      this.loading = true
+      this.f_loading = true
       this.$refs['ruleForm'].validate(async (valid) => {
         if (valid) {
           let res = []
@@ -151,7 +152,7 @@ export default{
             res = await api.user.update(this.ruleForm)
           }
           util.response(res, this)
-          this.loading = false
+          this.f_loading = false
           if (res.code === 200) {
             this.dialogFormVisible = false
             util.message('操作成功')
@@ -160,7 +161,7 @@ export default{
             util.message(res.error, 'error')
           }
         } else {
-          this.loading = false
+          this.f_loading = false
           return false
         }
       })
