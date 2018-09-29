@@ -1,5 +1,4 @@
 const state = {
-  showSidebar: true,
   privateRouter: [],
   userInfo: []
 }

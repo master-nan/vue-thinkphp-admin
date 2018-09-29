@@ -1,7 +1,4 @@
 const actions = {
-  setSidebarStatus ({commit}, status) {
-    commit('setSidebarStatus', status)
-  },
   setPrivateRouter ({commit}, data) {
     return new Promise(resolve => {
       commit('setPrivateRouter', data)

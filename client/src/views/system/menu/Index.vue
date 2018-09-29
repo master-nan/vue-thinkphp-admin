@@ -11,6 +11,7 @@
       el-table-column(prop="status" label="状态" align="center")
         template(slot-scope="scope")
           el-tag(:type="scope.row.status | statusFilterType") {{scope.row.status | statusFilter}}
+      el-table-column(prop="sort" label="排序" align="center")
       el-table-column(label="操作" width="300" align="center")
         template(slot-scope="scope")
           el-button(size="mini" type="primary" plain @click="edit(scope.row)") 编辑

@@ -1,9 +1,6 @@
 import { currentRouter } from '@/router'
 
 const mutations = {
-  setSidebarStatus (state, status) {
-    state.showSidebar = status
-  },
   setPrivateRouter (state, data) {
     if (data) {
       state.privateRouter = currentRouter.concat(data)
