@@ -48,7 +48,7 @@ class AdminUser extends Comm
         if (!$this->checkRule()) {
             return msg(102, null, '您没有权限操作');
         }
-        if ($this->param['password']) {
+        if (isset($this->param['password']) && $this->param['password'] != '') {
             $this->param['password'] = md5($this->param['password'].$this->param['username']);
         } else {
             unset($this->param['password']);
@@ -72,7 +72,7 @@ class AdminUser extends Comm
         } else {
             return msg(100, null, '参数错误');
         }
-        if (isset($this->param['password'])) {
+        if (isset($this->param['password']) && $this->param['password'] != '') {
             $this->param['password'] = md5($this->param['password'].$this->param['username']);
         } else {
             unset($this->param['password']);
